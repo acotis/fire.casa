@@ -2,107 +2,14 @@
 <html lang=en>
 <title>fire's house</title>
 <meta name=viewport content="width=device-width, initial-scale=1.0">
-<style>
-
-@font-face {
-  font-family: 'Lora';
-  src: url("/Lora/Lora-VariableFont_wght.ttf") format('woff2');
-}
-
-@font-face {
-  font-family: 'Lora';
-  font-style: italic;
-  src: url("/Lora/Lora-Italic-VariableFont_wght.ttf") format('woff2');
-}
-
-@property --flame-orange {
-  syntax: "<color>";
-  inherits: true;
-  initial-value: orange;
-}
-
-@property --unflame-percent {
-    syntax: "<percentage>";
-    inherits: true;
-    initial-value: -100%;
-}
-
-
-html {
-    --color-fg: black;
-    --color-bg: khaki;
-
-    @media (prefers-color-scheme: dark) {
-        --color-fg: #e4e4e4;
-        --color-bg: #111;
-    }
-}
-
-body {
-    margin: 0;
-    height: 100vh;
-    color: var(--color-fg);
-    font-family: sans;
-}
-
-main {
-    transition: all 1s;
-    max-width: 40rem;
-    border: 1px solid #888;
-    margin: auto;
-    padding: 1em 1.5em;
-    background-color: var(--color-bg);
-}
-
-h1 {
-    margin-top: 10px;
-}
-
-@media (prefers-color-scheme: dark) {
-    a { color: deepskyblue; }
-    a:visited { color: #ff98ee; }
-}
-
-footer {
-    text-align: right;
-}
-
-#fire-background {
-    transition: --unflame-percent 8s, --flame-orange 3s;
-    background: linear-gradient(black var(--unflame-percent), var(--flame-orange), red);
-    @media (prefers-color-scheme: dark) {
-        --unflame-percent: 50%; --orange: darkorange;
-    }
-
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: -100;
-}
-
-#outside-main {
-    padding: 1em;
-}
-
-h1 {
-    &::after {
-        content: "🔥";
-        float: right;
-    }
-}
-
-.spaced-list > * {
-    margin-bottom: 0.6em;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 <div id="fire-background"> </div> <!--Fire background-->
 
 <div id="outside-main">
 <main>
 
-<h1>Fire's house</h1>
+<h1 class="flaming">Fire's house</h1>
 <p>Hi! My name is Fire (he/they). My interests take the form of months-long single-minded obsessions which come and go at random. Right now, I'm intersted in Balatro and cryptic crosswords.
 
 <p>I'm currently <a href="todo">tracking</a> my win rates in Balatro on Gold stake for different decks. Aesthetically, I'd like to say that "True Balatro" is a game where you first select a deck uniformly at random and then play a run on that deck. Once I have more data, I will be able to report my win rate at True Balatro.
